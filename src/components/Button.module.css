@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+  .button {
+    @apply cursor-pointer select-none;
+    @apply hover:shadow-lg;
+    @apply rounded-md;
+  }
+
+.button:active {
+    @apply shadow-none;
+  }
+
+  .contained {
+    @apply bg-blue-500 text-white;
+  }
+
+  .outlined {
+    @apply border border-blue-500 text-blue-500;
+  }
+
+  .large {
+    @apply py-3 px-7;
+  }
+
+  .medium {
+    @apply py-2 px-4;
+  }
+
+  .small {
+    @apply py-1 px-2;
+}
+
+  .rounded {
+    @apply rounded-full;
+  }
+
+  .disableShadow {
+    @apply shadow-none hover:shadow-none;
+  }
+
+  .disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  /* ! Colors */
+  .red {
+    @apply bg-red-500 text-white;
+  }
+
+  .green {
+    @apply bg-green-500 text-white;
+  }
+
+  .blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  .yellow {
+    @apply bg-yellow-500 text-white;
+  }
+
+  .gray {
+    @apply bg-gray-500 text-white;
+  }
+
+  .black {
+    @apply bg-black text-white;
+  }
+
+  .white {
+    @apply bg-white text-black;
+  }
+
+  .transparent {
+    @apply bg-transparent text-black;
+  }
