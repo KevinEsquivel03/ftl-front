@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+.socialButton {
+    @apply w-full py-2.5 px-6 rounded-lg font-medium flex items-center justify-center gap-2 transition-all select-none cursor-pointer;
+    border: 1px solid var(--bg-300);
+    color: var(--text-100);
+    background-color: var(--bg-100);
+}
+
+.socialButton:hover {
+    background-color: var(--bg-200);
+    transform: translateY(-1px);
+    color: var(--primary-100);
+}
+
+.google {
+    composes: socialButton;
+    color: var(--text-100);
+}
+
+.facebook {
+    composes: socialButton;
+    background-color: #1877F2;
+    color: white;
+    border-color: #1877F2;
+}
+
+.apple {
+    composes: socialButton;
+    background-color: var(--dark-100);
+    color: white;
+    border-color: var(--dark-100);
+}

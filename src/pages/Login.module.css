@@ -1,42 +1,94 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-body{
+body {
+    background: linear-gradient(160deg, var(--primary-200) 0%, var(--bg-200) 100%) fixed;
+    background-size: cover;
+}
+
+.form {
+    @apply max-w-md mx-auto p-8 rounded-xl shadow-lg;
     background-color: var(--bg-100);
+    border: 1px solid var(--bg-300);
 }
 
-.form{
-    @apply max-w-sm mx-auto;
+.title {
+    @apply text-3xl font-bold mb-8 text-center;
+    color: var(--text-100);
 }
 
-.item{
-    @apply mb-5;
+.formGroup {
+    @apply mb-6;
 }
 
-.labelForm{
-    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+.label {
+    @apply block mb-2 text-sm font-medium;
+    color: var(--text-200);
 }
 
-.inputForm{
-    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+.passwordWrapper {
+    @apply relative;
 }
 
-.remember{
-    @apply flex items-start mb-5;
+.iconButton {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full;
+    color: var(--text-200);
+    transition: all 0.2s ease;
 }
 
-.checkbox{
-    @apply flex items-center h-5;
+.iconButton:hover {
+    background-color: var(--bg-300);
 }
 
-.checkboxInput{
-    @apply w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 select-none;
+.icon {
+    @apply w-6 h-6 stroke-2;
 }
 
-.checkboxLabel{
-    @apply ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 select-none;
+.rememberForgot {
+    @apply flex justify-between items-center mb-6 select-none;
 }
 
-.button{
-    background-color: var(--bg-100);
-    @apply text-white font-medium rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center cursor-pointer select-none;
+.rememberMe {
+    @apply flex items-center gap-2 text-sm cursor-pointer;
+    color: var(--text-200);
+}
+
+.checkbox {
+    @apply w-4 h-4 rounded border cursor-pointer;
+    accent-color: var(--primary-100);
+    border-color: var(--bg-300);
+}
+
+.forgotPassword {
+    @apply text-sm hover:underline;
+    color: var(--primary-100);
+}
+
+.submitButton {
+    @apply w-full py-3 px-6 rounded-lg font-medium text-white transition-all select-none cursor-pointer;
+    background-color: var(--primary-100);
+    box-shadow: 0 2px 4px var(--shadow-100);
+}
+
+.submitButton:hover {
+    background-color: var(--primary-150);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px var(--shadow-200);
+}
+
+.socialButtons {
+    @apply space-y-3 mb-6;
+}
+
+.socialIcon {
+    @apply w-5 h-5;
+}
+
+.signUp {
+    @apply text-center text-sm select-none;
+    color: var(--text-200);
+}
+
+.signUp .NavLink {
+    @apply font-medium hover:underline;
+    color: var(--primary-100);
 }

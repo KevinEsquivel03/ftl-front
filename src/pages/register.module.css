@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+.form {
+    @apply max-w-2xl mx-auto p-8 rounded-xl shadow-lg;
+    background-color: var(--bg-100);
+    border: 1px solid var(--bg-300);
+}
+
+.title {
+    @apply text-3xl font-bold mb-8 text-center;
+    color: var(--text-100);
+}
+
+.section {
+    @apply mb-8 p-6 rounded-xl;
+    background-color: var(--bg-200);
+    border: 1px solid var(--bg-300);
+}
+
+.sectionTitle {
+    @apply text-xl font-semibold mb-4;
+    color: var(--text-100);
+}
+
+.row {
+    @apply flex gap-4 mb-4;
+}
+
+.row > * {
+    @apply flex-1;
+}
+
+.submitButton {
+    @apply w-full py-3 px-6 rounded-lg font-medium text-white transition-all;
+    background-color: var(--primary-100);
+    box-shadow: 0 2px 4px var(--shadow-100);
+}
+
+.submitButton:hover {
+    background-color: var(--primary-150);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px var(--shadow-200);
+}
+
+.signIn {
+    @apply text-center text-sm mt-6;
+    color: var(--text-200);
+}
+
+.NavLink {
+    @apply font-medium hover:underline;
+    color: var(--primary-100);
+}
+
+/* Inherit social buttons styles from Login */
+.socialButtons {
+    @apply space-y-3 mb-6;
+}

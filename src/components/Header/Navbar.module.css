@@ -1,43 +1,98 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-.header {
-    @apply bg-white border-gray-200 dark:bg-gray-900;
+.nav {
+    @apply shadow-sm;
+    background-color: var(--bg-100);
 }
+
 .container {
-    @apply max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4;
+    @apply max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center;
 }
+
+/* Branding */
+.brand {
+    @apply flex items-center gap-3 py-2;
+}
+
 .logo {
-    @apply flex items-center space-x-3 rtl:space-x-reverse;
+    @apply h-10 w-10;
 }
 
-.logoImg {
-    @apply h-8;
+.brandName {
+    @apply text-xl font-semibold;
+    color: var(--text-100);
 }
 
-.logoText {
-    @apply self-center text-2xl font-semibold whitespace-nowrap dark:text-white;
+/* Menú móvil */
+.menuToggle {
+    @apply lg:hidden p-2 rounded-lg;
+    transition: all 0.3s ease;
 }
 
-.collapsed {
-    @apply inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+.hamburgerBox {
+    @apply relative block w-6 h-6;
 }
 
-.hamburger {
-    @apply sr-only;
+.hamburgerInner {
+    @apply absolute top-1/2 left-0 w-full h-0.5 -mt-px;
+    background-color: var(--text-100);
+    transition: all 0.3s ease;
 }
 
-.svg {
-    @apply w-5 h-5;
+.hamburgerInner::before,
+.hamburgerInner::after {
+    @apply absolute left-0 w-full h-0.5;
+    background-color: var(--text-100);
+    content: '';
+    transition: all 0.3s ease;
 }
 
-.navbar {
-    @apply hidden w-full md:block md:w-auto;
+.hamburgerInner::before {
+    @apply -top-2;
 }
 
-.menu {
-    @apply font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700;
+.hamburgerInner::after {
+    @apply bottom-0;
 }
 
-.menuItem {
-    @apply block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500;
+.menuToggle[aria-expanded="true"] .hamburgerInner {
+    background-color: transparent;
+}
+
+.menuToggle[aria-expanded="true"] .hamburgerInner::before {
+    transform: translateY(2px) rotate(45deg);
+}
+
+.menuToggle[aria-expanded="true"] .hamburgerInner::after {
+    transform: translateY(-2px) rotate(-45deg);
+}
+
+.menuContainer {
+    @apply basis-full lg:basis-auto w-full lg:w-auto lg:flex lg:items-center;
+    transition: all 0.3s ease;
+}
+
+.menuList {
+    @apply flex flex-col lg:flex-row gap-4 lg:gap-6 py-4 lg:py-0;
+}
+
+.menuLink {
+    @apply px-4 py-2 rounded-lg transition-colors;
+    color: var(--text-100);
+}
+
+.menuLink:hover {
+    @apply opacity-75;
+}
+
+.menuLink:hover,
+.menuLink.active {
+    color: var(--text-100);
+    background-color: var(--primary-100);
+}
+
+@media (max-width: 1023px) {
+    .menuContainer:not(.show) {
+        @apply hidden;
+    }
 }

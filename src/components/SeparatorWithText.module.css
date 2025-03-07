@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.separator {
+    @apply flex items-center my-6;
+    color: var(--text-300);
+}
+
+.separator::before,
+.separator::after {
+    @apply flex-1 h-px;
+    content: '';
+    background-color: var(--bg-300);
+}
+
+.separator::before {
+    @apply mr-4;
+}
+
+.separator::after {
+    @apply ml-4;
+}
